@@ -1,20 +1,60 @@
-import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, Text, View } from 'react-native';
+import React from "react"
+import { StyleSheet, Dimensions, Text, TouchableWithoutFeedback, View, Image, SafeAreaView, Platform, StatusBar} from 'react-native'
+import { useDimensions, useDeviceOrientation } from '@react-native-community/hooks'
+import WelcomeScreen from "./app/screens/WelcomeScreen"
+import ViewImageScreen from "./app/screens/ViewImageScreen"
 
 export default function App() {
+  // console.log(Dimensions.get("screen"))
+  // console.log(useDimensions)
+  // const {landscape} = useDeviceOrientation()
+
   return (
-    <View style={styles.container}>
-      <Text>Open up App.js to start working on your app!</Text>
-      <StatusBar style="auto" />
-    </View>
-  );
+    <ViewImageScreen />
+    // <WelcomeScreen/>
+    // <View
+    //   style={{
+    //     backgroundColor: "#fff",
+    //     flex: 1,
+    //     justifyContent: "center",
+    //     flexDirection: "row",
+    //     alignItems: "center"
+    //   }}
+    //   >
+    //   <View style={{
+    //     backgroundColor: "dodgerblue",
+    //     width: 100,
+    //     height: 100
+    //   }}/>
+    //   <View style={{
+    //     backgroundColor: "gold",
+    //     width: 100,
+    //     height: 100
+    //   }}/>
+    //   <View style={{
+    //     backgroundColor: "tomato",
+    //     width: 100,
+    //     height: 100
+    //   }}/>
+    // </View>
+
+    // <SafeAreaView style={styles.container}>
+    //   <View style={{
+    //     backgroundColor: "dodgeblue",
+    //     width: "100%",
+    //     height: landscape ? 30 : 100
+    //   }}>
+
+    //   </View>
+    // </SafeAreaView>
+  )
 }
+// bs comment 
 
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
+    backgroundColor: 'dodgerblue',
+    // paddingTop: Platform.OS === "android" ? StatusBar.currentHeight : 0
   },
-});
+})
